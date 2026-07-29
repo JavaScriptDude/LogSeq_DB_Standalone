@@ -1,6 +1,7 @@
 # devz_notes_logseq_launcher.sh
 # Launcher for cr_notes.lsdb (devz)
 # home: /dpool/vcmain/dev/linux/devz_notes_logseq_launcher
+# see AFN.md for details on setting Actions for Nautilus for launcher
 
 
 #!/bin/bash
@@ -8,12 +9,16 @@ _OK=true
 META_DIR=.devz
 LOGSEQ_APPIMAGE="/home/timq/apps/logseq-db/Logseq-db-2.0.1/Logseq-linux-x86_64-2.0.1.AppImage"
 
+echo pwd: $(pwd)
+
 # check if DEBUG_CWD is set, then change into it
 if [ -n "$DEBUG_CWD" ]; then
     cd "$DEBUG_CWD" || {
         echo "ERROR: Could not change directory to $DEBUG_CWD" && _OK=false
     }
 fi
+
+echo pwd: $(pwd)
 
 # Get CR Name (current folder name)
 CR_NAME="$(basename "$(pwd)")"
@@ -32,9 +37,9 @@ if $_OK; then
     LS_ROOT=$CURRENT_DIR/$META_DIR/ls_root
     LS_CONFIG_DIR="$LS_ROOT/.config/Logseq"
     LS_STATE_HOME="$LS_ROOT/logseq"
-    LS_GRAPH_PATH="$LS_STATE_HOME/graphs/DEVZ_NOTES"
+    LS_GRAPH_PATH="$LS_STATE_HOME/graphs/$LOGSEQ_GRAPH_NAME"
     
-    if [ ! -d "$LS_STATE_DIR" ];
+    if [ ! -d "$LS_STATE_HOME" ];
     then
         mkdir -p "$LS_CONFIG_DIR"
         mkdir -p "$LS_STATE_HOME"
