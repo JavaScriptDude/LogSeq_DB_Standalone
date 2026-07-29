@@ -13,4 +13,4 @@
 ## debugging:
 - [x] Enable debugging output (in AFN)
 - % `nautilus -q`
-- % `nautilus --no-desktop /dpool/devcrs/260605b_Some_Stuff_Im_Planning`
+- % `nautilus --no-desktop /dpool/devz/260605b_WS_WhiteGoodsFieldP2 &`
