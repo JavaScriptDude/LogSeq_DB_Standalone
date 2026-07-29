@@ -1,0 +1,15 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug devz_notes_logseq_launcher.sh",
+      "type": "bashdb",
+      "request": "launch",
+      "cwd": "/dpool/devz/260605b_WS_WhiteGoodsFieldP2/",
+      "program": "${workspaceFolder}/devz_notes_logseq_launcher.sh",
+      "args": [],
+      "env": {"DEBUG_CWD": "/dpool/devz/260605b_WS_WhiteGoodsFieldP2"},
+      "terminalKind": "integrated"
+    }
+  ]
+}
